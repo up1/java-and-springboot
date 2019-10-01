@@ -1,6 +1,7 @@
 package potter;
 
 import lombok.Data;
+import lombok.Getter;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -13,6 +14,7 @@ public class Book {
 
     private int id;
     private String name;
+
     private double price;
 
     public Book() {
@@ -22,5 +24,10 @@ public class Book {
         this.id = id;
         this.name = name;
         this.price = price;
+    }
+
+
+    public double getPrice() {
+        return price;
     }
 }
