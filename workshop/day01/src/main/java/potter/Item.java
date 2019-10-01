@@ -10,7 +10,15 @@ public class Item {
         this.quantity = quantity;
     }
 
+    public Book getBook() {
+        return book;
+    }
+
     public int getQuantity() {
         return quantity;
+    }
+
+    public void updateQuantity(int quantity) {
+        this.quantity += quantity;
     }
 }

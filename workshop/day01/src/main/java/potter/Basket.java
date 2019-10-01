@@ -8,6 +8,14 @@ public class Basket {
     List<Item> books = new ArrayList<>();
 
     public void addItem(Item item) {
+        // Find existed book in basket
+        for (Item i: books) {
+            if(i.getBook().equals(item.getBook())) {
+                // Update quantity
+                i.updateQuantity(item.getQuantity());
+                return;
+            }
+        }
         books.add(item);
     }
 
