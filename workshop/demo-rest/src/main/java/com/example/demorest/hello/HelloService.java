@@ -8,15 +8,23 @@ import java.util.Optional;
 @Service
 public class HelloService {
 
-    @Autowired
     private MessageRepository messageRepository;
 
-    public String process(String name) {
-        Optional<Message> result =  messageRepository.findByName(name);
-        if(result.isPresent()){
-            return "Hello " + result.get().getName();
-        }
-        return "Data not found with name= " + name;
+    @Autowired
+    public HelloService(MessageRepository messageRepository) {
+        this.messageRepository = messageRepository;
+    }
+
+    public String process(String name){
+        throw new RuntimeException("Fake data");
+//        Optional<Message> result =  messageRepository.findByName(name);
+//        if(result.isPresent()){
+//            if("fake".equals(result.get().getName())) {
+//                throw new FakeException();
+//            }
+//            return "Hello " + result.get().getName();
+//        }
+//        return "Data not found with name= " + name;
     }
 
 }
