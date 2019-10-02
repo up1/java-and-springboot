@@ -2,6 +2,13 @@ plugins {
 	id 'org.springframework.boot' version '2.1.8.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
 	id 'java'
+	id 'jacoco'
+}
+
+jacocoTestReport {
+	reports {
+		xml.enabled true
+	}
 }
 
 group = 'com.example'
